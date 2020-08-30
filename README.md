@@ -1,6 +1,6 @@
 # raylib-never
 
-# examples
+### Running examples
 
 First exprt variables which point to raylib and Never raylib bindings.
 
