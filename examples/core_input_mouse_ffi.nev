@@ -23,6 +23,7 @@
 *     3. This notice may not be removed or altered from any source distribution.
 *
 **********************************************************************************************/
+
 record Vector2
 {
     x : float;
@@ -37,9 +38,12 @@ record Color
     a : char;
 }
 
-let MOUSE_LEFT_BUTTON = 0;
-let MOUSE_RIGHT_BUTTON = 1;
-let MOUSE_MIDDLE_BUTTON = 2;
+enum MouseButton
+{
+    MOUSE_LEFT_BUTTON = 0,
+    MOUSE_RIGHT_BUTTON = 1,
+    MOUSE_MIDDLE_BUTTON = 2
+}
 
 let DARKBLUE = Color(chr(0), chr(82), chr(172), chr(255));
 let DARKGRAY = Color(chr(80), chr(80), chr(80), chr(255));
@@ -76,15 +80,15 @@ func main() -> int
     {
         ballPosition = GetMousePosition();
 
-        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON))
+        if (IsMouseButtonPressed(MouseButton::MOUSE_LEFT_BUTTON))
         {
             ballColor = MAROON
         }
-        else if (IsMouseButtonPressed(MOUSE_MIDDLE_BUTTON))
+        else if (IsMouseButtonPressed(MouseButton::MOUSE_MIDDLE_BUTTON))
         {
             ballColor = LIME
         }
-        else if (IsMouseButtonPressed(MOUSE_RIGHT_BUTTON))
+        else if (IsMouseButtonPressed(MouseButton::MOUSE_RIGHT_BUTTON))
         {
             ballColor = DARKBLUE
         }
@@ -106,3 +110,4 @@ func main() -> int
 
     0
 }
+
